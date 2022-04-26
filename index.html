@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Cinta</title>
+    <link rel="stylesheet" href="asset/style.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="sweetalert2/dist/sweetalert2.all.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="form-group mb-3">
+                <input type="text" class="form-control" id="nama_kamu" placeholder="Nama Kamu" aria-label="Username" aria-describedby="basic-addon1">
+                <small class="text-danger validate"></small>
+            </div>
+
+            <div class="form-group mb-3">
+                <input type="text" class="form-control" id="nama_gebetan" placeholder="Nama Gebetan kamu" aria-label="Username" aria-describedby="basic-addon1">
+                <small class="text-danger validate"></small>
+            </div>
+
+            <div class="col-lg-5">
+                <button class="btn btn-primary" id="btn-hitung">Hitung</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-5">
+                <p class="val-player"></p>
+                <p class="val-gebetan"></p>
+                <p class="val-hitung"></p>
+            </div>
+        </div>
+    </div>
+    
+
+<script>
+    $('#btn-hitung').click(function() {
+        var p1 = $('#nama_kamu').val();
+        var p2 = $('#nama_gebetan').val();
+
+        if(p1 == ""){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Nama Kamu Perlu diisi',
+            })
+        } else if (p1.length <=2 ) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Minimal Masukan 3 karakter',
+            })
+        } else if(!isNaN(p1)){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Nama Kamu Harusa berupa Huruf',
+            })
+        } else if(p2 == ""){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Nama Gebetan kamu harus diisi',
+            })
+        } else if (p2.length <=2 ) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Minimal Masukan 3 karakter',
+            })
+        } else if(!isNaN(p2)){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Nama Kamu Harusa berupa Huruf',
+            })
+        } else{
+            $('#nama_kamu').attr('value', ''); 
+            var lovdata = Math.random() * 100;
+            lovdata = Math.floor(lovdata);
+            $('.val-player').html('Nama Kamu : '+p1);
+            $('.val-gebetan').html('Nama Gebetan kamu : '+p2);
+            
+            if(lovdata <= 10) {
+                $('.val-hitung').html(lovdata+'% ?! Waduh Sepertinya anda kurang beruntung');
+            } else if(lovdata <= 20) {
+                $('.val-hitung').html(lovdata+'% ?! Waduh Sepertinya anda kurang beruntung');
+            } else if(lovdata <= 30) {
+                $('.val-hitung').html(lovdata+'% ?! Waduh Sepertinya anda kurang beruntung');
+            } else if(lovdata <= 40) {
+                $('.val-hitung').html(lovdata+'% ?! Waduh Sepertinya anda kurang beruntung');
+            } else if(lovdata <= 50) {
+                $('.val-hitung').html(lovdata+'% ?! Waduh Sepertinya anda kurang beruntung');
+            }  else if(lovdata <= 60) {
+                $('.val-hitung').html(lovdata+'% ?! Anda cukup beruntung');
+            } else {
+                $('.val-hitung').html('Anjay!! '+lovdata+'% Kalian sudah pasti jodoh');
+            }
+
+        }
+    });
+</script>
+</body>
+</html>
