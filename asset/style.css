@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    background-image: linear-gradient(to top, #FA0000, #FF6A6A);
+    width: 100% !important;
+    height: 100vh;
+}
+.row-wrapper {
+    height: 100vh;
+}
