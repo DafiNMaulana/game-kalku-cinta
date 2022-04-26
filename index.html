@@ -29,19 +29,21 @@
     
     <!-- ----------------------form----------------- -->
     <div class="container">
-        <div class="row justify-content-center px-3 row-wrapper">
-            <div class="col-12 nama-player text-center">
-                <label for="nama_kamu" class="text-uppercase text-light">-Nama kamu-</label>
-                <input type="text" class="form-control" id="nama_kamu">
+        <form action="hasil.html" id="form-submit">
+            <div class="row justify-content-center px-3 row-wrapper">
+                <div class="col-12 col-lg-4 nama-player text-center">
+                    <label for="nama_kamu" class="text-uppercase text-light">-Nama kamu-</label>
+                    <input type="text" class="form-control" id="nama_kamu">
+                </div>
+                <div class="col-12 col-lg-4 nama-player text-center">
+                    <label for="nama_kamu" class="text-uppercase text-light">-Nama Pasangan kamu-</label>
+                    <input type="text" class="form-control" id="nama_gebetan">
+                </div>
+                <div class="col-12 text-center">
+                    <button type="button" id="btn-hitung" class="btn rounded-pill border text-uppercase">Hitung kecocokan</button>
+                </div>
             </div>
-            <div class="col-12 nama-player text-center">
-                <label for="nama_kamu" class="text-uppercase text-light">-Nama Pasangan kamu-</label>
-                <input type="text" class="form-control" id="nama_kamu">
-            </div>
-            <div class="col-12 text-center">
-                <a href="" class="btn rounded-pill border px-5">Mulai</a>
-            </div>
-        </div>
+        </form>
     </div>
     <!-- ----------------------form END----------------- -->
 
@@ -90,25 +92,25 @@
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: 'Minimal Masukan 3 karakter',
+                text: 'Nama Kamu minimal Masukan 3 karakter',
             })
         } else if(!isNaN(p1)){
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: 'Nama Kamu Harusa berupa Huruf',
+                text: 'Nama Kamu Harus berupa Huruf',
             })
         } else if(p2 == ""){
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: 'Nama Gebetan kamu harus diisi',
+                text: 'Nama pasangan kamu harus diisi',
             })
         } else if (p2.length <=2 ) {
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: 'Minimal Masukan 3 karakter',
+                text: 'Nama Pasangan kamu minimal Masukan 3 karakter',
             })
         } else if(!isNaN(p2)){
             Swal.fire({
@@ -117,30 +119,23 @@
                 text: 'Nama Kamu Harusa berupa Huruf',
             })
         } else{
-            $('#nama_kamu').attr('value', ''); 
-            var lovdata = Math.random() * 100;
-            lovdata = Math.floor(lovdata);
-            $('.val-player').html('Nama Kamu : '+p1);
-            $('.val-gebetan').html('Nama Gebetan kamu : '+p2);
-            
-            if(lovdata <= 10) {
-                $('.val-hitung').html(lovdata+'% ?! Waduh Sepertinya anda kurang beruntung');
-            } else if(lovdata <= 20) {
-                $('.val-hitung').html(lovdata+'% ?! Waduh Sepertinya anda kurang beruntung');
-            } else if(lovdata <= 30) {
-                $('.val-hitung').html(lovdata+'% ?! Waduh Sepertinya anda kurang beruntung');
-            } else if(lovdata <= 40) {
-                $('.val-hitung').html(lovdata+'% ?! Waduh Sepertinya anda kurang beruntung');
-            } else if(lovdata <= 50) {
-                $('.val-hitung').html(lovdata+'% ?! Waduh Sepertinya anda kurang beruntung');
-            }  else if(lovdata <= 60) {
-                $('.val-hitung').html(lovdata+'% ?! Anda cukup beruntung');
+            $('#form-submit').submit(); 
+            let sum = (p1.length * p2.length % 100) + (p2.length * p1.length % 100);
+            if (sum <= 100) {
+                localStorage.setItem('sum', sum);
+            } else if(sum <= 50) {
+                localStorage.setItem('sum', sum);
             } else {
-                $('.val-hitung').html('Anjay!! '+lovdata+'% Kalian sudah pasti jodoh');
+                localStorage.setItem('sum', sum);
             }
+            localStorage.setItem('namaKamu', p1);
+            localStorage.setItem('namaGebetan', p2);
 
         }
     });
+// localStorage.setItem('lovdata', lovdata);
+// var lovdata = Math.random() * 100;
+// lovdata = Math.floor(lovdata);
 </script>
 </body>
 </html>

@@ -39,10 +39,11 @@
     box-shadow: 0px 2px 4px -3px black;
 }
 
-.row-wrapper .col-12 a {
+.row-wrapper .col-12 button {
     width: 236px;
     color: white;
     box-shadow: 0px 2px 4px -3px black;
     background: #DD2020;
     margin-bottom: -207.5px;
+    font-family: 'Inter', sans-serif;
 }
