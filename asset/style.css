@@ -1,3 +1,7 @@
+/* -----------fonts------------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
+/* -----------fonts end------------- */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,4 +13,21 @@
 }
 .row-wrapper {
     height: 100vh;
+    position: relative;
+}
+
+.row-wrapper .col-9 h1 {
+    font-family: 'Inter', sans-serif;
+}
+
+.row-wrapper .col-9 h1 span {
+    color: #FAFF00;
+}
+
+.row-wrapper .col-9 a {
+    margin-bottom: -207.5px;
+    width: 236px;
+    color: white;
+    box-shadow: 0px 2px 4px -3px black;
+    background: #DD2020;
 }

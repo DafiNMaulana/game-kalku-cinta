@@ -5,15 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator Cinta</title>
-    <link rel="stylesheet" href="asset/style.css">
+    <link rel="stylesheet" href="asset/style-form.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="wrapper">
 
+    <!-- ----------------------title----------------- -->
     <div class="container">
+        <div class="row justify-content-center row-wrapper">
+            <div class="col-9 col-md-4 text-center">
+                <img src="asset/icons8-love-64 1.png" alt="">
+                <h1 class="text-uppercase">kalkulator jodoh</h1>
+            </div>
+        </div>
+    </div>
+    <!-- ----------------------title END----------------- -->
+    
+    <!-- ----------------------form----------------- -->
+    <div class="container">
+        <div class="row justify-content-center px-3 row-wrapper">
+            <div class="col-12 nama-player text-center">
+                <label for="nama_kamu" class="text-uppercase text-light">-Nama kamu-</label>
+                <input type="text" class="form-control" id="nama_kamu">
+            </div>
+            <div class="col-12 nama-player text-center">
+                <label for="nama_kamu" class="text-uppercase text-light">-Nama Pasangan kamu-</label>
+                <input type="text" class="form-control" id="nama_kamu">
+            </div>
+            <div class="col-12 text-center">
+                <a href="" class="btn rounded-pill border px-5">Mulai</a>
+            </div>
+        </div>
+    </div>
+    <!-- ----------------------form END----------------- -->
+
+
+    <!-- <div class="container">
         <div class="row mt-5">
             <div class="form-group mb-3">
                 <input type="text" class="form-control" id="nama_kamu" placeholder="Nama Kamu" aria-label="Username" aria-describedby="basic-addon1">
@@ -39,7 +72,7 @@
                 <p class="val-hitung"></p>
             </div>
         </div>
-    </div>
+    </div> -->
     
 
 <script>
