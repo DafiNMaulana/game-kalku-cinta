@@ -13,6 +13,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="aos/aos/dist/aos.css">
+    <script src="aos/aos/dist/aos.js"></script>
 </head>
 <body class="wrapper">
 
@@ -31,15 +33,15 @@
     <div class="container">
         <form action="hasil.html" id="form-submit">
             <div class="row justify-content-center px-3 row-wrapper">
-                <div class="col-12 col-lg-4 nama-player text-center">
+                <div data-aos="fade-up"  data-aos-duration="1000" class="col-12 col-lg-4 nama-player text-center">
                     <label for="nama_kamu" class="text-uppercase text-light">-Nama kamu-</label>
                     <input type="text" class="form-control" id="nama_kamu">
                 </div>
-                <div class="col-12 col-lg-4 nama-player text-center">
+                <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000" class="col-12 col-lg-4 nama-player text-center">
                     <label for="nama_kamu" class="text-uppercase text-light">-Nama Pasangan kamu-</label>
                     <input type="text" class="form-control" id="nama_gebetan">
                 </div>
-                <div class="col-12 text-center">
+                <div data-aos="fade-up" data-aos-delay="150" data-aos-duration="1000" class="col-12 text-center">
                     <button type="button" id="btn-hitung" class="btn rounded-pill border text-uppercase">Hitung kecocokan</button>
                 </div>
             </div>
@@ -120,19 +122,15 @@
             })
         } else{
             $('#form-submit').submit(); 
-            let sum = (p1.length * p2.length % 100) + (p2.length * p1.length % 100);
-            if (sum <= 100) {
-                localStorage.setItem('sum', sum);
-            } else if(sum <= 50) {
-                localStorage.setItem('sum', sum);
-            } else {
-                localStorage.setItem('sum', sum);
-            }
+            let sum = Math.random()*100;
+            let fix = Math.floor(sum);
+            localStorage.setItem('sum', fix);
             localStorage.setItem('namaKamu', p1);
             localStorage.setItem('namaGebetan', p2);
 
         }
     });
+    AOS.init();
 // localStorage.setItem('lovdata', lovdata);
 // var lovdata = Math.random() * 100;
 // lovdata = Math.floor(lovdata);

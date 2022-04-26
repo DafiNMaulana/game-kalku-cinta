@@ -13,6 +13,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="aos/aos/dist/aos.css">
+    <script src="aos/aos/dist/aos.js"></script>
 </head>
 <body class="wrapper">
 
@@ -27,8 +29,8 @@
                     </h3>
                 </div>
                 <span class="text-capitalize text-light">adalah :</span>
-                <h1 class="persen text-light">70%</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi beatae eum quasi, iste quibusdam nesciunt aliquam placeat </p>
+                <h1 class="persen text-light" data-aos-duration="1000" data-aos="zoom-out"></h1>
+                <p id="tips" data-aos-delay="1000" data-aos-duration="1000" data-aos="fade-up"></p>
             </div>
             <div class="col-12 text-center">
                 <a href="index.html" class="btn rounded-pill border text-uppercase">Coba lagi</a>
@@ -69,11 +71,36 @@
     
 
 <script>
-    var namaKamu = localStorage.getItem('namaGebetan');
-    var namaGebetan = localStorage.getItem('namaKamu');
-    var lovdata = localStorage.getItem('sum');
+    AOS.init();
+    var namaKamu = localStorage.getItem('namaKamu');
+    var namaGebetan = localStorage.getItem('namaGebetan');
+    var tips = localStorage.getItem('tips');
     $('#nama-player').html('- '+namaKamu+' '+'&'+' '+namaGebetan+' -');
-    $('.persen').html(lovdata+'%');
+    var lovdata = localStorage.getItem('sum');
+    if (lovdata > 100 ) {
+        $('.persen').html("100"+"%");
+        $('#tips').html('Kecocokan ini bukan main !, buat yang belum jadian cobalah buat deketin doi, buat yang udah jadian mungkin kalian jodoh Ciyeeee');
+    }
+    if(lovdata < 100) {
+        $('.persen').html(lovdata+"%");
+        $('#tips').html('Mantap persentase kecocokan ini amat tinggi biasanya doi kamu juga punya pearsaan yang sama dengan kamu, cobalah buat memulai obrolan kecil biar kedekatan kalian meningkat');
+    }
+    if(lovdata < 80) {
+        $('.persen').html(lovdata+"%");
+        $('#tips').html('Kalian sudah sangat cocok buat jadi pacar atau mungkin jadi istri / suami juga gas !');
+    }
+    if(lovdata < 60) {
+        $('.persen').html(lovdata+"%");
+        $('#tips').html("Hmmmm mungkin kamu dan pasangan kamu agaknya kurang cocok, tapi buat kamu yang sedang berusaha deketin gebetan tetap menyerah dan jangan semangat eh '-' maksud nya sebaliknya");
+    }
+    if(lovdata < 40) {
+        $('.persen').html(lovdata+"%");
+        $('#tips').html("Iya gak papa, asal jangan jadi pengemis cinta aja. tapi kalo dah depresi cobalah buat inget tuhan bukan malah bunuh diri");
+    } 
+    if(lovdata < 20) {
+        $('.persen').html(lovdata+"%");
+        $('#tips').html("Bukan maksud mau menghina, coba inget kata kata kang parkir? yak mundur terus mundur");
+    }
 </script>
 </body>
 </html>
