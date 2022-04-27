@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator Cinta</title>
-    <link rel="stylesheet" href="asset/style-hasil.css">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="src/asset/style-hasil.css">
+    <link rel="stylesheet" href="src/bootstrap/css/bootstrap.min.css">
+    <script src="src/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="src/sweetalert2/dist/sweetalert2.all.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="aos/aos/dist/aos.css">
-    <script src="aos/aos/dist/aos.js"></script>
+    <link rel="stylesheet" href="src/aos/aos/dist/aos.css">
+    <script src="src/aos/aos/dist/aos.js"></script>
 </head>
 <body class="wrapper">
 
@@ -22,7 +22,7 @@
     <div class="container">
         <div class="row justify-content-center row-wrapper">
             <div class="col-9 col-md-4 text-center">
-                <img src="asset/icons8-love-64 1.png" alt="">
+                <img src="src/asset/icons8-love-64 1.png" alt="">
                 <h2 class="text-uppercase text-light">kecocokan</h2>
                 <div class="parenth3 d-block">
                     <h3 class="text-capitalize text-dprimary" id="nama-player">
@@ -39,37 +39,6 @@
     </div>
     <!-- ----------------------title END----------------- -->
     
-
-
-    <!-- <div class="container">
-        <div class="row mt-5">
-            <div class="form-group mb-3">
-                <input type="text" class="form-control" id="nama_kamu" placeholder="Nama Kamu" aria-label="Username" aria-describedby="basic-addon1">
-                <small class="text-danger validate"></small>
-            </div>
-
-            <div class="form-group mb-3">
-                <input type="text" class="form-control" id="nama_gebetan" placeholder="Nama Gebetan kamu" aria-label="Username" aria-describedby="basic-addon1">
-                <small class="text-danger validate"></small>
-            </div>
-
-            <div class="col-lg-5">
-                <button class="btn btn-primary" id="btn-hitung">Hitung</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row justify-content-center mt-5">
-            <div class="col-lg-5">
-                <p class="val-player"></p>
-                <p class="val-gebetan"></p>
-                <p class="val-hitung"></p>
-            </div>
-        </div>
-    </div> -->
-    
-
 <script>
     AOS.init();
     var namaKamu = localStorage.getItem('namaKamu');
@@ -79,15 +48,15 @@
     var lovdata = localStorage.getItem('sum');
     if (lovdata > 100 ) {
         $('.persen').html("100"+"%");
-        $('#tips').html('Kecocokan ini bukan main !, buat yang belum jadian cobalah buat deketin doi, buat yang udah jadian mungkin kalian jodoh Ciyeeee');
+        $('#tips').html('Kecocokan ini bukan main !, buat yang belum jadian cobalah buat deketin doi, buat yang udah jadian mungkin kalian jodoh. Anjay JODOH');
     }
     if(lovdata < 100) {
         $('.persen').html(lovdata+"%");
-        $('#tips').html('Mantap persentase kecocokan ini amat tinggi biasanya doi kamu juga punya pearsaan yang sama dengan kamu, cobalah buat memulai obrolan kecil biar kedekatan kalian meningkat');
+        $('#tips').html('Mantap persentase kecocokan ini amat tinggi biasanya doi kamu juga punya perasaan yang sama dengan kamu, buat yang belum jadian cobalah buat memulai obrolan kecil biar kedekatan kalian meningkat');
     }
     if(lovdata < 80) {
         $('.persen').html(lovdata+"%");
-        $('#tips').html('Kalian sudah sangat cocok buat jadi pacar atau mungkin jadi istri / suami juga gas !');
+        $('#tips').html('Kalian sudah sangat cocok buat jadi pacar atau mungkin jadi pasutri? ya level kecocokan kalian bisa dilihat dari persentase ini');
     }
     if(lovdata < 60) {
         $('.persen').html(lovdata+"%");
@@ -95,11 +64,11 @@
     }
     if(lovdata < 40) {
         $('.persen').html(lovdata+"%");
-        $('#tips').html("Iya gak papa, asal jangan jadi pengemis cinta aja. tapi kalo dah depresi cobalah buat inget tuhan bukan malah bunuh diri");
+        $('#tips').html("Persentase ini mungkin kecil tapi gapapa, yang namanya cocok ga cocok itu bukan acuan buat kamu bisa terus sama doi");
     } 
     if(lovdata < 20) {
         $('.persen').html(lovdata+"%");
-        $('#tips').html("Bukan maksud mau menghina, coba inget kata kata kang parkir? yak mundur terus mundur");
+        $('#tips').html("Buset nilai ini bukan main emang wkwk, demi kebaikan bersama saya ga mau ngasih caption yang aneh aneh.");
     }
 </script>
 </body>
